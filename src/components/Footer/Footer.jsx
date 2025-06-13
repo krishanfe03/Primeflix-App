@@ -29,7 +29,7 @@ const Footer = () => {
         <li>Corporation Information</li>
         <li>Contact Us</li>
       </ul>   
-      <p className=' '>© 1997-2023 Netflix, Inc.</p>
+      <p className=' '>© 1997-2023 Primeflix, Inc.</p>
     </div>
   )
 }
