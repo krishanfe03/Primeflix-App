@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './Login.css'
-import logo from '../../assets/logo.png'
 import { login, signup } from '../../firebase'
 import netflix_spinner from '../../assets/netflix_spinner.gif'
 
@@ -25,13 +24,21 @@ const Login = () => {
   }
 
   return (
-    loading?<div className='login-spinner'>
+    loading?
+    <div className='login-spinner'>
       <img src={netflix_spinner} alt="" />
     </div>:
     <div className='login'>
-      <img src={logo} alt="" className='login-logo' /> 
       <div className="login-form">
         <h1>{signState}</h1>
+         <p style={{
+            fontSize: "14px",
+            color: "red",
+            marginBottom: "10px",
+            textAlign: "center"
+          }}>
+            ⚠️ This is a demo project. Please do not use real credentials.
+          </p>
         <form>
           {signState==="Sign Up"?
           <input value={name} onChange={(e)=>{setName(e.target.value)}}
