@@ -12,7 +12,7 @@ const App = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user)=> {
+    const unsubscribe = onAuthStateChanged(auth, (user)=> {
       if(user) {
         console.log("Logged In")
         navigate('/')
@@ -22,7 +22,10 @@ const App = () => {
         navigate('/login')
       }
     })
-  })
+
+    return ()=> unsubscribe();
+
+  }, [])
 
 
   return (
