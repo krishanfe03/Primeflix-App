@@ -1,77 +1,103 @@
-import React, { useState } from 'react'
-import './Login.css'
-import { login, signup } from '../../firebase'
-import netflix_spinner from '../../assets/netflix_spinner.gif'
+// import React, { useState } from 'react'
+// import './Login.css'
+// import { login, signup } from '../../firebase'
+// import netflix_spinner from '../../assets/netflix_spinner.gif'
 
-const Login = () => {
+// const Login = () => {
   
-  const[signState, setSignState] = useState("Sign In")
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("")
-  const [loading, setLoading] = useState(false);
+//   const[signState, setSignState] = useState("Sign In")
+//   const [name, setName] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("")
+//   const [loading, setLoading] = useState(false);
 
 
-  const user_auth = async (event)=>{
-    event.preventDefault();
-    setLoading(true);
-    if(signState==="Sign In"){
-      await login(email, password);
-    }else{
-      await signup(name, email, password);
-    }
-    setLoading(false);
-  }
+//   const user_auth = async (event)=>{
+//     event.preventDefault();
+//     setLoading(true);
 
-  return (
-    loading?
-    <div className='login-spinner'>
-      <img src={netflix_spinner} alt="" />
-    </div>:
-    <div className='login'>
-      <div className="login-form">
-        <h1>{signState}</h1>
-         <p style={{
-            fontSize: "14px",
-            color: "red",
-            marginBottom: "10px",
-            textAlign: "center"
-          }}>
-            ⚠️ This is a demo project. Please do not use real credentials.
-          </p>
-        <form>
-          {signState==="Sign Up"?
-          <input value={name} onChange={(e)=>{setName(e.target.value)}}
-          type="text" placeholder='Your name' />:<></>}
-          <input
-          value={email} onChange={(e)=>{setEmail(e.target.value)}} 
-          type="email" placeholder='Email' />
-          <input
-          value={password} onChange={(e)=>{setPassword(e.target.value)}}
-          type="password" placeholder='Password' />          
-          <button onClick={user_auth} type='submit'>{signState}</button>
-          <div className="form-help">
-            <div className="remember">
-              <input type="checkbox" />
-              <label htmlFor="">Remember Me</label>
-            </div>
-            <p>Need Help?</p>
-          </div>
-        </form>
-        <div className="form-switch">
-          {signState==="Sign In"?
-           <p>New to Netflix? <span onClick={()=>{setSignState("Sign Up")}}>Sign Up Now</span></p>
-           :<p>Aaready have account? <span onClick={()=>{setSignState("Sign In")}}>Sign In Now</span></p>
-          }
+//     setTimeout(() => {
+//       alert(" Login Signup is disabled for demo mode.")      
+//       setLoading(false);
+//     }, 1000);
+
+//     // if(signState==="Sign In"){
+//     //   await login(email, password);
+//     // }else{
+//     //   await signup(name, email, password);
+//     // }
+//     // setLoading(false);
+//   };
+
+//   return (
+//     loading?
+//     <div className='login-spinner'>
+//       <img src={netflix_spinner} alt="" />
+//     </div>:
+//     <div className='login'>
+//       <div className="login-form">
+//         <h1>{signState}</h1>
+//          <p style={{
+//             fontSize: "14px",
+//             color: "red",
+//             marginBottom: "10px",
+//             textAlign: "center"
+//           }}>
+//             ⚠️ This is a demo project. Please do not use real credentials.
+//           </p>
+//         <form>
+//           {signState==="Sign Up"?
+//           <input value={name} onChange={(e)=>{setName(e.target.value)}}
+//           type="text" placeholder='Your name' />:<></>}
+//           <input
+//           value={email} onChange={(e)=>{setEmail(e.target.value)}} 
+//           type="email" placeholder='Email' />
+//           <input
+//           value={password} onChange={(e)=>{setPassword(e.target.value)}}
+//           type="password" placeholder='Password' />          
+//           <button onClick={user_auth} type='submit'>{signState}</button>
+//           <div className="form-help">
+//             <div className="remember">
+//               <input type="checkbox" />
+//               <label htmlFor="">Remember Me</label>
+//             </div>
+//             <p>Need Help?</p>
+//           </div>
+//         </form>
+//         <div className="form-switch">
+//           {signState==="Sign In"?
+//            <p>New to Netflix? <span onClick={()=>{setSignState("Sign Up")}}>Sign Up Now</span></p>
+//            :<p>Aaready have account? <span onClick={()=>{setSignState("Sign In")}}>Sign In Now</span></p>
+//           }
           
-        </div>
-      </div>     
-    </div>
-  )
-}
+//         </div>
+//       </div>     
+//     </div>
+//   )
+// }
 
-export default Login
+// export default Login
 
 
 //pwd login page -> kunal@kk1205
 
+
+// const Login = () => {
+//   return (
+//     <div className='login'>
+//       <div className="login-form">
+//         <h1>Login/Signup Disabled</h1>
+//         <p style={{
+//           fontSize: "14px",
+//           color: "red",
+//           marginBottom: "10px",
+//           textAlign: "center"
+//         }}>
+//           ⚠️ This is a demo portfolio project. Login and Signup functionality is disabled for safety.
+//         </p>
+//       </div>     
+//     </div>
+//   );
+// };
+
+// export default Login;
